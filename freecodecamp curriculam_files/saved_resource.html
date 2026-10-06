@@ -1,0 +1,64 @@
+
+<!-- saved from url=(0012)about:srcdoc -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><!--<base href="">--><base href=".">
+  <style class="fcc-hide-header">
+    head *, title, meta, link, script {
+      display: none !important;
+    }
+  </style>
+  <script>
+    window.__frameId = 'fcc-main-frame';
+    function __fccAlertParent(variant, externalLink) {
+      window.parent.postMessage({
+        type: 'fcc:preview:alert',
+        variant: variant,
+        externalLink: externalLink
+      }, 'https://www.freecodecamp.org');
+    }
+    window.onerror = function(msg) {
+      const string = msg.toLowerCase();
+      if (string.includes('script error')) {
+        msg = 'Build error, open your browser console to learn more.';
+      }
+      console.log(msg);
+      return true;
+    };
+    document.addEventListener('click', function(e) {
+      let element = e.target;
+      while(element && element.nodeName !== 'A') {
+        element = element.parentElement;
+      }
+      if (element && element.nodeName === 'A' && new URL(element.href).hash === '') {
+        e.preventDefault();
+        __fccAlertParent('external-link', element.href);      }
+      if (element) {
+        const href = element.getAttribute('href');
+        if (!href || href[0] !== '#' && !href.match(/^https?:\/\//)) {
+          e.preventDefault();
+        }
+        else if (href.match(/^#.+/)) {
+          e.preventDefault();
+          const scrollId = href.substring(1);
+          window.location.hash = scrollId;
+        }
+      }
+    }, false);
+    document.addEventListener('submit', function(e) {
+      const action = e.target.getAttribute('action');
+      e.preventDefault();
+      if (action && action.match(/https?:\/\//)) {
+        __fccAlertParent('external-form', action);
+      }
+    }, false);
+  </script>
+</head><body><h1>Welcome to freeCodeCamp</h1>
+<h2>Full-Stack Curriculum</h2>
+<p>Learn the skills to become a full-stack developer</p>
+
+<h3>Introduction to HTML</h3>
+<p>HTML represents the content and structure of a webpage</p>
+
+<h3>Introduction to CSS</h3>
+<p>CSS is used to style a webpage</p>
+<h3>Introduction to JavaScript</h3>
+<p>JavaScript adds interactivity to a webpage</p></body></html>
